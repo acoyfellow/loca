@@ -124,6 +124,10 @@ For gated models, accept the model license on Hugging Face and set `HF_TOKEN` be
 
 ---
 
+## 📊 First gateway eval snapshot
+
+The first nine-model Cloudflare AI Gateway comparison is summarized in [`evals/results/2026-06-16.md`](./evals/results/2026-06-16.md). Treat it as an integration and dataset smoke test, not a leaderboard.
+
 ## 📋 Notes / caveats
 
 - **Licenses matter.** Apache 2.0 / MIT are the friendliest. Llama-family models use Meta’s custom license. `Kimi-K2` uses a modified MIT. Always read the license before product use.
