@@ -1,0 +1,17 @@
+# Downloaded model weights / checkpoints
+models/
+
+# Eval output and local credentials
+evals/runs/
+.env
+.env.*
+!.env.example
+
+# Local environments / caches
+.venv/
+node_modules/
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store

@@ -1,0 +1,47 @@
+{
+  "tiers": {
+    "laptop": {
+      "note": "8–16 GB VRAM",
+      "models": [
+        "zai-org/GLM-4.7-Flash",
+        "google/gemma-4-12B-it",
+        "LiquidAI/LFM2.5-8B-A1B",
+        "Qwen/Qwen3-30B-A3B"
+      ]
+    },
+    "single-gpu-24-48": {
+      "note": "Single 24–48 GB GPU",
+      "models": [
+        "Qwen/Qwen3-32B",
+        "Qwen/QwQ-32B",
+        "Qwen/Qwen2.5-Coder-32B-Instruct",
+        "zai-org/GLM-5.1",
+        "XiaomiMiMo/MiMo-V2.5-Pro"
+      ]
+    },
+    "single-gpu-80": {
+      "note": "Single 80 GB GPU / dual 48 GB",
+      "models": [
+        "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+        "meta-llama/Llama-3.3-70B-Instruct",
+        "google/gemma-4-26B-A4B-it"
+      ]
+    },
+    "server": {
+      "note": "Multi-GPU / 128 GB+",
+      "models": [
+        "deepseek-ai/DeepSeek-R1-0528",
+        "Qwen/Qwen3-235B-A22B",
+        "deepseek-ai/DeepSeek-V4-Flash"
+      ]
+    },
+    "cluster": {
+      "note": "Research cluster",
+      "models": [
+        "deepseek-ai/DeepSeek-V4-Pro",
+        "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
+        "moonshotai/Kimi-K2-Instruct"
+      ]
+    }
+  }
+}
