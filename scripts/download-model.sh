@@ -4,7 +4,7 @@
 #   ./scripts/download-model.sh <model-id> [local-dir] [--dry-run|--yes]
 #
 # Examples:
-#   ./scripts/download-model.sh zai-org/GLM-5.1
+#   ./scripts/download-model.sh openai/gpt-oss-20b
 #   ./scripts/download-model.sh Qwen/Qwen3-32B ./my-qwen --dry-run
 #   ./scripts/download-model.sh meta-llama/Llama-4-Scout-17B-16E-Instruct --yes
 

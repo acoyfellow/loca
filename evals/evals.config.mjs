@@ -15,6 +15,11 @@ export default {
       chat_template_kwargs: { enable_thinking: false },
       temperature: 0.2,
     },
+    "@cf/zai-org/glm-5.2": {
+      reasoning_effort: "low",
+      chat_template_kwargs: { enable_thinking: false },
+      temperature: 0.2,
+    },
     "@cf/openai/gpt-oss-20b": {
       reasoning_effort: "low",
       temperature: 0.2,
@@ -45,7 +50,7 @@ export default {
     "kimi-k2.7-code": "@cf/moonshotai/kimi-k2.7-code",
     // Already present in the shared-models preset, repeated here for clarity.
     "glm-4.7-flash": "@cf/zai-org/glm-4.7-flash",
-    "glm-5.1": "@cf/zai-org/glm-5.1",
+    "glm-5.2": "@cf/zai-org/glm-5.2",
     "qwen-coder-32b": "@cf/qwen/qwen2.5-coder-32b-instruct",
     "llama-3.3-70b": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
     "llama-3.1-8b": "@cf/meta/llama-3.1-8b-instruct-fp8-fast",

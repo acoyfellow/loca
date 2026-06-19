@@ -47,6 +47,7 @@ Add `--yes` to skip the billable-call confirmation. Override models with `--mode
 
 ## Default full model set
 
+- `glm-5.2` (`@cf/zai-org/glm-5.2`)
 - `glm-4.7-flash` (`@cf/zai-org/glm-4.7-flash`)
 - `llama-4-scout` (`@cf/meta/llama-4-scout-17b-16e-instruct`)
 - `gpt-oss-20b` (`@cf/openai/gpt-oss-20b`)
@@ -57,7 +58,7 @@ Add `--yes` to skip the billable-call confirmation. Override models with `--mode
 - `llama-3.3-70b` (`@cf/meta/llama-3.3-70b-instruct-fp8-fast`)
 - `kimi-k2.6` (`@cf/moonshotai/kimi-k2.6`)
 
-`glm-5.1` remains an alias but was not visible in the public Workers AI catalog when this research was recorded.
+GLM 5.2 is Cloudflare-hosted and included in the default full suite. Its native open weights support 1M context; the Workers AI deployment currently documents a 262,144-token served context.
 
 ## Output
 

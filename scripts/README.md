@@ -20,10 +20,10 @@ Safe download helpers. Nothing here downloads weights unless you explicitly say 
 
 ```bash
 # Preview only
-./scripts/download-model.sh zai-org/GLM-5.1 --dry-run
+./scripts/download-model.sh openai/gpt-oss-20b --dry-run
 
 # Interactive download of one model
-./scripts/download-model.sh zai-org/GLM-5.1
+./scripts/download-model.sh openai/gpt-oss-20b
 
 # Download a whole recommended tier
 ./scripts/download-tier.sh single-gpu-24-48 --dry-run

@@ -15,7 +15,7 @@
         "Qwen/Qwen3-32B",
         "Qwen/QwQ-32B",
         "Qwen/Qwen2.5-Coder-32B-Instruct",
-        "zai-org/GLM-5.1",
+        "openai/gpt-oss-20b",
         "XiaomiMiMo/MiMo-V2.5-Pro"
       ]
     },

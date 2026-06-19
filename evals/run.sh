@@ -23,9 +23,9 @@ CLOUDEVAL_ROOT="${CLOUDEVAL_ROOT:-../../cloudeval}"
 CLI="${CLOUDEVAL_ROOT}/bin/cloudeval.mjs"
 JUDGE="@cf/meta/llama-3.3-70b-instruct-fp8-fast"
 
-SMOKE_MODELS="glm-4.7-flash,gpt-oss-20b"
-PILOT_MODELS="glm-4.7-flash,gpt-oss-20b,qwen3-30b-a3b"
-FULL_MODELS="glm-4.7-flash,llama-4-scout,gpt-oss-20b,gemma-4-26b,qwq-32b,qwen3-30b-a3b,qwen-coder-32b,llama-3.3-70b,kimi-k2.6"
+SMOKE_MODELS="glm-5.2,glm-4.7-flash"
+PILOT_MODELS="glm-5.2,glm-4.7-flash,gpt-oss-20b"
+FULL_MODELS="glm-5.2,glm-4.7-flash,llama-4-scout,gpt-oss-20b,gemma-4-26b,qwq-32b,qwen3-30b-a3b,qwen-coder-32b,llama-3.3-70b,kimi-k2.6"
 
 while [[ $# -gt 0 ]]; do
   case "$1" in

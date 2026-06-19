@@ -31,14 +31,11 @@ A few ground rules used here:
 
 ---
 
-## ⚠️ First: there is no GLM 5.2
+## GLM 5.2 update
 
-If you came here looking for `GLM 5.2`, it does not exist as a downloadable open model as of this writing. The latest GLM-family releases are:
+[`zai-org/GLM-5.2`](https://huggingface.co/zai-org/GLM-5.2) was released on **2026-06-16**, after the first version of this research. It is a real, MIT-licensed open-weight model with roughly **754B total / 40B active parameters** and a native **1M-token context**.
 
-- [`zai-org/GLM-5.1`](https://huggingface.co/zai-org/GLM-5.1) (~31B dense, MIT)
-- [`zai-org/GLM-4.7-Flash`](https://huggingface.co/zai-org/GLM-4.7-Flash) (~4.4B dense, MIT)
-
-Both are in the matrix below.
+It is downloadable, but not laptop-sized: the full model is about 1.51 TB and the smallest practical public quantizations still require roughly 223–245 GB of memory/storage. Cloudflare hosts it as [`@cf/zai-org/glm-5.2`](https://developers.cloudflare.com/workers-ai/models/glm-5.2/) with a 262K served context, so this project evaluates it remotely before considering weights.
 
 ---
 
@@ -56,7 +53,7 @@ Both are in the matrix below.
 | 8 | [meta-llama/Llama-4-Scout-17B-16E-Instruct](https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E-Instruct) | Apr 2025 | **109B / 17B** | **256K** | safetensors, GGUF* | ~65 GB / ~10 GB | Llama 4 | Single-GPU multimodal |
 | 9 | [meta-llama/Llama-3.3-70B-Instruct](https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct) | Nov 2024 | **70B dense** | **128K** | safetensors, GGUF, AWQ, FP8 | ~42 GB / — | Llama 3.3 | Reliable dense generalist |
 | 10 | [moonshotai/Kimi-K2-Instruct](https://huggingface.co/moonshotai/Kimi-K2-Instruct) | Jul 2025 | **1T / 32B** | **128K** | safetensors, GGUF* | ~600 GB / ~19 GB | modified-MIT | Huge-scale general MoE |
-| 11 | [zai-org/GLM-5.1](https://huggingface.co/zai-org/GLM-5.1) | Apr 2026 | **~31B dense** | ~**128K** | safetensors, GGUF* | ~19 GB / — | MIT | General Chinese-English |
+| 11 | [zai-org/GLM-5.2](https://huggingface.co/zai-org/GLM-5.2) | Jun 2026 | **~754B / ~40B active** | **1M** | BF16/FP8, GGUF*, MLX* | ~452 GB / ~24 GB active-only | MIT | Long-horizon coding and agents |
 | 12 | [zai-org/GLM-4.7-Flash](https://huggingface.co/zai-org/GLM-4.7-Flash) | Jan 2026 | **~4.4B dense** | ~**128K** | safetensors, GGUF* | ~3 GB / — | MIT | Edge / fast GLM |
 | 13 | [Qwen/Qwen2.5-Coder-32B-Instruct](https://huggingface.co/Qwen/Qwen2.5-Coder-32B-Instruct) | Nov 2024 | **32.5B dense** | **128K** | safetensors, GGUF, AWQ | ~20 GB / — | Apache 2.0 | Code generation |
 | 14 | [Qwen/QwQ-32B](https://huggingface.co/Qwen/QwQ-32B) | Mar 2025 | **32.5B dense** | **128K** | safetensors, GGUF, AWQ | ~20 GB / — | Apache 2.0 | Reasoning on consumer HW |
@@ -85,8 +82,10 @@ Both are in the matrix below.
 ### Single 24–48 GB GPU (the sweet spot)
 - **Qwen3-32B** or **QwQ-32B** (~20 GB Q4) — best dense 30B.
 - **Qwen2.5-Coder-32B** (~20 GB Q4) — best coding specialist.
-- **GLM-5.1** (~19 GB Q4) — best 30B-class Chinese/English.
-- **MiMo-V2.5-Pro** (~20 GB Q4) — best long-context coding/agent.
+- **GPT OSS 20B** (~13 GB Q4 total) — efficient general/reasoning MoE.
+- **MiMo-V2.5-Pro** (~20 GB Q4) — long-context coding/agent research candidate.
+
+GLM 5.2 does **not** fit this tier despite its ~40B active parameter count; all expert weights still need storage/offload, and current minimum-memory quantizations are above 200 GB.
 
 ### Single 80 GB GPU / dual 48 GB
 - **Llama-4-Scout** (~65 GB Q4 total) — best multimodal that fits on one H100/A100.
@@ -110,14 +109,14 @@ Both are in the matrix below.
 Nothing downloads by default. Preview the disk-impact command first:
 
 ```bash
-# Preview one model
-./scripts/download-model.sh zai-org/GLM-5.1 --dry-run
+# Preview one laptop-sized model
+./scripts/download-model.sh openai/gpt-oss-20b --dry-run
 
 # Preview a hardware tier
 ./scripts/download-tier.sh laptop --dry-run
 
 # Interactive download only after deciding
-./scripts/download-model.sh zai-org/GLM-5.1
+./scripts/download-model.sh openai/gpt-oss-20b
 ```
 
 For gated models, accept the model license on Hugging Face and set `HF_TOKEN` before running the helper.

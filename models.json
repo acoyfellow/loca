@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated_at": "2026-06-13",
-    "note": "Research dump. No guarantees. VRAM assumes Q4_K_M ≈ 0.6 bytes/param for weights only; KV-cache and framework overhead are extra.",
+    "generated_at": "2026-06-19",
+    "note": "Research dump. No guarantees. VRAM assumes Q4_K_M ≈ 0.6 bytes/param for weights only; KV-cache and framework overhead are extra. GLM-5.2 minimum public quants are still over 200 GB despite ~40B active parameters.",
     "source": "Hugging Face model cards and public configs as of 2026-06-13"
   },
   "models": [
@@ -15,7 +15,11 @@
       "active_params_b": 49,
       "is_moe": true,
       "context": "1M",
-      "formats": ["FP8/FP4 mixed", "safetensors", "GGUF*"],
+      "formats": [
+        "FP8/FP4 mixed",
+        "safetensors",
+        "GGUF*"
+      ],
       "vram_q4_all_gb": 960,
       "vram_q4_active_gb": 29,
       "license": "MIT",
@@ -33,7 +37,10 @@
       "active_params_b": 13,
       "is_moe": true,
       "context": "1M",
-      "formats": ["FP8/FP4 mixed", "GGUF*"],
+      "formats": [
+        "FP8/FP4 mixed",
+        "GGUF*"
+      ],
       "vram_q4_all_gb": 170,
       "vram_q4_active_gb": 8,
       "license": "MIT",
@@ -51,7 +58,10 @@
       "active_params_b": 37,
       "is_moe": true,
       "context": "128K",
-      "formats": ["FP8/FP4", "GGUF*"],
+      "formats": [
+        "FP8/FP4",
+        "GGUF*"
+      ],
       "vram_q4_all_gb": 403,
       "vram_q4_active_gb": 22,
       "license": "MIT",
@@ -69,7 +79,12 @@
       "active_params_b": 22,
       "is_moe": true,
       "context": "32K native → 128K YaRN",
-      "formats": ["safetensors", "GGUF", "AWQ", "FP8"],
+      "formats": [
+        "safetensors",
+        "GGUF",
+        "AWQ",
+        "FP8"
+      ],
       "vram_q4_all_gb": 141,
       "vram_q4_active_gb": 13,
       "license": "Apache-2.0",
@@ -87,7 +102,12 @@
       "active_params_b": 32.8,
       "is_moe": false,
       "context": "32K native → 128K YaRN",
-      "formats": ["safetensors", "GGUF", "AWQ", "FP8"],
+      "formats": [
+        "safetensors",
+        "GGUF",
+        "AWQ",
+        "FP8"
+      ],
       "vram_q4_all_gb": 20,
       "vram_q4_active_gb": null,
       "license": "Apache-2.0",
@@ -105,7 +125,11 @@
       "active_params_b": 3.3,
       "is_moe": true,
       "context": "32K native → 128K YaRN",
-      "formats": ["safetensors", "GGUF", "AWQ"],
+      "formats": [
+        "safetensors",
+        "GGUF",
+        "AWQ"
+      ],
       "vram_q4_all_gb": 18,
       "vram_q4_active_gb": 2,
       "license": "Apache-2.0",
@@ -123,7 +147,10 @@
       "active_params_b": 17,
       "is_moe": true,
       "context": "1M",
-      "formats": ["safetensors", "GGUF*"],
+      "formats": [
+        "safetensors",
+        "GGUF*"
+      ],
       "vram_q4_all_gb": 240,
       "vram_q4_active_gb": 10,
       "license": "Llama-4",
@@ -141,7 +168,10 @@
       "active_params_b": 17,
       "is_moe": true,
       "context": "256K",
-      "formats": ["safetensors", "GGUF*"],
+      "formats": [
+        "safetensors",
+        "GGUF*"
+      ],
       "vram_q4_all_gb": 65,
       "vram_q4_active_gb": 10,
       "license": "Llama-4",
@@ -159,7 +189,12 @@
       "active_params_b": 70,
       "is_moe": false,
       "context": "128K",
-      "formats": ["safetensors", "GGUF", "AWQ", "FP8"],
+      "formats": [
+        "safetensors",
+        "GGUF",
+        "AWQ",
+        "FP8"
+      ],
       "vram_q4_all_gb": 42,
       "vram_q4_active_gb": null,
       "license": "Llama-3.3",
@@ -177,7 +212,10 @@
       "active_params_b": 32,
       "is_moe": true,
       "context": "128K",
-      "formats": ["safetensors", "GGUF*"],
+      "formats": [
+        "safetensors",
+        "GGUF*"
+      ],
       "vram_q4_all_gb": 600,
       "vram_q4_active_gb": 19,
       "license": "modified-MIT",
@@ -187,21 +225,26 @@
     },
     {
       "rank": 11,
-      "id": "zai-org/GLM-5.1",
-      "name": "GLM-5.1",
-      "url": "https://huggingface.co/zai-org/GLM-5.1",
-      "release": "2026-04-03",
-      "total_params_b": 31.35,
-      "active_params_b": 31.35,
-      "is_moe": false,
-      "context": "~128K*",
-      "formats": ["safetensors", "GGUF*"],
-      "vram_q4_all_gb": 19,
-      "vram_q4_active_gb": null,
+      "id": "zai-org/GLM-5.2",
+      "name": "GLM-5.2",
+      "url": "https://huggingface.co/zai-org/GLM-5.2",
+      "release": "2026-06-16",
+      "total_params_b": 754,
+      "active_params_b": 40,
+      "is_moe": true,
+      "context": "1M native; 262K on Workers AI",
+      "formats": [
+        "BF16",
+        "FP8",
+        "GGUF*",
+        "MLX*"
+      ],
+      "vram_q4_all_gb": 452,
+      "vram_q4_active_gb": 24,
       "license": "MIT",
       "gated": false,
-      "best_for": "General Chinese-English",
-      "harvest_note": "The real latest GLM (there is no GLM-5.2). Strong 30B-class model."
+      "best_for": "Long-horizon coding and agents",
+      "harvest_note": "Official open weights exist, but full weights are ~1.51 TB and smallest practical public quants require roughly 223–245 GB. Use @cf/zai-org/glm-5.2 for evaluation on this Mac."
     },
     {
       "rank": 12,
@@ -213,7 +256,10 @@
       "active_params_b": 4.38,
       "is_moe": false,
       "context": "~128K*",
-      "formats": ["safetensors", "GGUF*"],
+      "formats": [
+        "safetensors",
+        "GGUF*"
+      ],
       "vram_q4_all_gb": 3,
       "vram_q4_active_gb": null,
       "license": "MIT",
@@ -231,7 +277,11 @@
       "active_params_b": 32.5,
       "is_moe": false,
       "context": "128K",
-      "formats": ["safetensors", "GGUF", "AWQ"],
+      "formats": [
+        "safetensors",
+        "GGUF",
+        "AWQ"
+      ],
       "vram_q4_all_gb": 20,
       "vram_q4_active_gb": null,
       "license": "Apache-2.0",
@@ -249,7 +299,11 @@
       "active_params_b": 32.5,
       "is_moe": false,
       "context": "128K",
-      "formats": ["safetensors", "GGUF", "AWQ"],
+      "formats": [
+        "safetensors",
+        "GGUF",
+        "AWQ"
+      ],
       "vram_q4_all_gb": 20,
       "vram_q4_active_gb": null,
       "license": "Apache-2.0",
@@ -267,7 +321,10 @@
       "active_params_b": 4,
       "is_moe": true,
       "context": "256K",
-      "formats": ["safetensors", "GGUF*"],
+      "formats": [
+        "safetensors",
+        "GGUF*"
+      ],
       "vram_q4_all_gb": 16,
       "vram_q4_active_gb": 2,
       "license": "Apache-2.0",
@@ -285,7 +342,10 @@
       "active_params_b": 12,
       "is_moe": false,
       "context": "256K",
-      "formats": ["safetensors", "GGUF*"],
+      "formats": [
+        "safetensors",
+        "GGUF*"
+      ],
       "vram_q4_all_gb": 7,
       "vram_q4_active_gb": null,
       "license": "Apache-2.0",
@@ -303,7 +363,12 @@
       "active_params_b": 3.6,
       "is_moe": true,
       "context": "~128K*",
-      "formats": ["safetensors", "FP8", "MXFP4", "GGUF*"],
+      "formats": [
+        "safetensors",
+        "FP8",
+        "MXFP4",
+        "GGUF*"
+      ],
       "vram_q4_all_gb": 13,
       "vram_q4_active_gb": 2,
       "license": "Apache-2.0",
@@ -321,7 +386,9 @@
       "active_params_b": 3,
       "is_moe": true,
       "context": "256K (64K max output)",
-      "formats": ["safetensors"],
+      "formats": [
+        "safetensors"
+      ],
       "vram_q4_all_gb": 18,
       "vram_q4_active_gb": 2,
       "license": "Apache-2.0",
@@ -339,7 +406,13 @@
       "active_params_b": 1.5,
       "is_moe": true,
       "context": "128K",
-      "formats": ["safetensors", "GGUF", "MLX", "vLLM", "SGLang"],
+      "formats": [
+        "safetensors",
+        "GGUF",
+        "MLX",
+        "vLLM",
+        "SGLang"
+      ],
       "vram_q4_all_gb": 5,
       "vram_q4_active_gb": 1,
       "license": "lfm1.0",
@@ -357,7 +430,10 @@
       "active_params_b": 34,
       "is_moe": false,
       "context": "1M",
-      "formats": ["safetensors", "FP8"],
+      "formats": [
+        "safetensors",
+        "FP8"
+      ],
       "vram_q4_all_gb": 20,
       "vram_q4_active_gb": null,
       "license": "MIT",
